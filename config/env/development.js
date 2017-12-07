@@ -1,8 +1,5 @@
 module.exports = {
-
-   mongoUri: 'mongodb://localhost:27017/project',
-    // or use 
-     //mongoUri: 'mongodb://admin:password@localhost:27017/project',
+    mongoUri: 'mongodb://admin:password@ds133496.mlab.com:33496/swaaap',
     debug: true,
     sessionSecret: 'dev_secret_key',
     
