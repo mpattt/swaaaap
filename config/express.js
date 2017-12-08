@@ -21,17 +21,17 @@ module.exports = function () {
     app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
-    
+
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    
+
     // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    
+
     // Set to true if you need the website to include cookies in the requests sent
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
-    
+
     // Pass to next layer of middleware
     next();
     });
@@ -47,12 +47,12 @@ module.exports = function () {
     app.use(passport.initialize()); // start passport
     app.use(passport.session()); // use session via express-session
     app.use(flash());
-    
+
     require('../app/routes/index.route')(app);
     require('../app/routes/user.route')(app);
     require('../app/routes/post.route')(app);
     require('../app/routes/item.route')(app);
+    require('../app/routes/upload.route')(app);
 
     return app;
 }
-
