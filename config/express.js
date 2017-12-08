@@ -4,6 +4,7 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
+var flash = require('connect-flash');
 
 module.exports = function () {
     const app = express();
@@ -45,7 +46,7 @@ module.exports = function () {
 
     app.use(passport.initialize()); // start passport
     app.use(passport.session()); // use session via express-session
-
+    app.use(flash());
     
     require('../app/routes/index.route')(app);
     require('../app/routes/user.route')(app);

@@ -1,4 +1,4 @@
-import passport from 'passport';
+const passport = require('passport');
 var user = require('../controllers/user.controller');
 
 module.exports = (app) => {
@@ -13,7 +13,7 @@ module.exports = (app) => {
             successRedirect: '/',
             failureRedirect: '/login',
             failureFlash: true,
-    
+
         }));
 
     app.post('/logout', user.logout);
@@ -28,5 +28,13 @@ module.exports = (app) => {
         successRedirect: '/home'
     }));
 
-}
+    app.get('/oauth/facebook', passport.authenticate('facebook', {
+          scope: ['public_profile', 'email'],
+          failureRedirect: '/login'
+    }));
 
+    app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+          failureRedirect: '/login',
+          successRedirect: '/home'
+    }));
+}
