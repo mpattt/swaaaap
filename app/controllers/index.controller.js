@@ -18,7 +18,3 @@ exports.home = (req, res) => {
            res.status(400).send({ message: 'User is not signed in' });
     }
 }
-
-exports.login = (req, res) => {
-    res.sendFile((path.join(__dirname + '/../views/login.html')));
-}

@@ -14,7 +14,7 @@ exports.getUsers = (req, res, next) => {
        });
 }
 exports.create = (req, res, next) => {
-    
+
     var user = new User(req.body);
     user.save((err) => {
            if (err) {
@@ -29,14 +29,12 @@ exports.create = (req, res, next) => {
 }
 
 exports.login = (req, res) => {
-    
+
     if (!req.user) {
-        
-        res.redirect('/login');
+        res.sendFile((path.join(__dirname + '/../views/login.html')));
     }
     else {
-       
-           res.redirect('/post');
+        res.redirect('/post');
     }
 }
 
@@ -54,7 +52,7 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
            if (err) return done(err);
            else {
                   if (!user) {
-                         var possibleUsername = profile.username 
+                         var possibleUsername = profile.username
      || (profile.email ? profile.email.split('@')[0] : '');
                          console.log('NAME: ' + profile.username);
                  User.findUniqueUsername(possibleUsername, null, (availableUsername) => {

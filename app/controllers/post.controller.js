@@ -21,7 +21,7 @@ exports.getAll = (req, res, next) => {
        }
 }
 exports.getOne = (req, res, next) => {
-    if (req.user) {        
+    if (req.user) {
            Post.findOne({_id: req.params.id}, (err, data) => {
                   if (err) {
                          console.log('Failure: ' + err);
@@ -61,7 +61,7 @@ exports.getMyPost = (req, res, next) => {
     }
 }
 exports.create = (req, res, next) => {
-    
+
     if (req.user) {
            var post = new Post(req.body);
            post.author = req.user.username;
@@ -77,10 +77,10 @@ exports.create = (req, res, next) => {
            });
     }
     else {
-        
+
            res.status(400).send({
                   message: 'User is not signed in'
-            
+
            });
     }
 }
