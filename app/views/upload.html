@@ -5,11 +5,9 @@
     <title>Sample File Upload</title>
 </head>
 <body>
-  <form method="post" action="/postFormAct" enctype="multipart/form-data">
-  <input type="text" name="user"><br>
-  <input type="text" name="email"><br>
-<input type="file" name="userPic"><br>
-  <input type="submit" value="Submit">
-</form>
+  <form method="post" action="/api/uploads" enctype="multipart/form-data">
+    <input type="file" name="userPic"><br>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>

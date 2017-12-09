@@ -12,5 +12,6 @@ module.exports = function(){
        require('../app/models/user.model');
        require('../app/models/post.model');
        require('../app/models/item.model');
+        require('../app/models/upload.model');
        return db;
-} 
+}

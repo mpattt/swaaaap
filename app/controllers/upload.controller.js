@@ -1,23 +1,16 @@
-var mime    =   require('mime');
 var path = require("path");
-var multer = require('multer');
+var Upload = require('mongoose').model('Upload');
 
-var storage	=	multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-' + Date.now() + '.jpg');
-  }
-});
-var upload = multer({ storage : storage }).array('userPic');
-
-exports.getItems = (req, res, next) => {
-
-
- upload(req,res,function(err) {
-   console.log(req.files); // Here i getting proper output and image also uploading to concern folder
-
+exports.getImg = (req, res ,next) => {
+    Upload.find( (err, upload) => {
+        if (err) {
+               console.log('Failure');
+               return next(err);
+        }
+        else {
+               console.log('Success');
+               res.json(upload);
+        }
  });
 }
 
