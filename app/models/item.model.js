@@ -2,26 +2,24 @@ const  mongoose  = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema = new Schema({
-       name: {
-              type: String,
-             // required: true,
-              trim: true
-       },
-       description: {
-              type: String
-       },
-       look:  String,
-       send:String,
-
- create: {
-        type: Date,
-        default: Date.now
- },
- postby: {
-      type: String,
-     // required: true,
-      trim: true
-},
+      name: {
+            type: String,
+            required: true,
+            trim: true
+      },
+      description: {
+            type: String
+      },
+      lookfor:  String,
+      categoty:String,
+      postby: {
+            type: String,
+            trim: true
+      },
+      create: {
+            type: Date,
+            default: Date.now
+      }
 });
 
 mongoose.model('Item', ItemSchema);

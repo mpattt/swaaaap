@@ -10,9 +10,7 @@ var UserSchema = new Schema({
               unique: true,
               required: 'Username is required',
               trim: true
-       },
-       email: { type: String, unique: true },
-       tel:{type: String},
+       },  
        password: {
         type: String,
        //required: 'Password is required',
@@ -20,6 +18,13 @@ var UserSchema = new Schema({
                (password) => { return password && password.length>=1; },
                'Password cannot be empty'
         ]
+        },
+        address:{type: String},
+        email: { type: String, unique: true },
+        tel:{type: String},
+        status: {
+            type: String,
+            default: 'user'
         },
         created: {
                 type: Date,

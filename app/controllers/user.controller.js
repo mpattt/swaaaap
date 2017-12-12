@@ -27,11 +27,28 @@ exports.create = (req, res, next) => {
            }
     });
 }
+exports.edit = (req, res, next) => {
+    User.find((err, user) => {
+        if(user.username ==req.username){
+        var user = new User(req.body);
+        user.edit((err) => {
+               if (err) {
+                      console.log('Failure');
+                      return next(err);
+               }
+               else {
+                      console.log('Success');
+                      res.json(user);
+               }
+        });}
+      });   
+}
+
 
 exports.login = (req, res) => {
 
     if (!req.user) {
-        res.sendFile((path.join(__dirname + '/../views/login.html')));
+        res.redirect('/');
     }
     else {
         res.redirect('/post');
