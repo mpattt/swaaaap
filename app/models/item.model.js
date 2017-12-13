@@ -11,6 +11,7 @@ var ItemSchema = new Schema({
             type: String
       },
       lookfor:  String,
+      send: String,
       categoty:String,
       postby: {
             type: String,
