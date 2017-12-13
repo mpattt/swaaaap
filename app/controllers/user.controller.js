@@ -28,6 +28,21 @@ exports.create = (req, res, next) => {
     });
 }
 
+exports.edit = (req, res, next) => {
+    
+        var user = new User(req.body);
+        user.update((err) => {
+               if (err) {
+                      console.log('Failure');
+                      return next(err);
+               }
+               else {
+                      console.log('Success');
+                      res.json(user);
+               }
+        });
+    }
+
 exports.login = (req, res) => {
 
     if (!req.user) {
