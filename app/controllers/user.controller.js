@@ -13,6 +13,9 @@ exports.getUsers = (req, res, next) => {
               }
        });
 }
+
+
+
 exports.create = (req, res, next) => {
 
     var user = new User(req.body);
@@ -31,7 +34,7 @@ exports.create = (req, res, next) => {
 exports.edit = (req, res, next) => {
     
         var user = new User(req.body);
-        user.update((err) => {
+        User.findByIdAndUpdate((err) => {
                if (err) {
                       console.log('Failure');
                       return next(err);
