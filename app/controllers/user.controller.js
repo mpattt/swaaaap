@@ -32,16 +32,14 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-    
-        var user = new User(req.body);
-        User.findByIdAndUpdate(req.params.username,{$set:req.body}, function(err, result) {
+        User.findByIdAndUpdate(req.body.username,{$set:req.body}, function(err, result) {
                if (err) {
                       console.log('Failure');
                       return next(err);
                }
                else {
-                      console.log('Success');
-                      res.json(user);
+                      console.log('Success'+result);
+                      res.send('done');
                }
         });
     }
