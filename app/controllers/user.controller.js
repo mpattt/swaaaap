@@ -32,21 +32,21 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-    console
-        User.findByIdAndUpdate(req.params._id,{$set:req.body}, function(err, result) {
-               if (err) {
-                      console.log('Failure');
-                      return next(err);
-               }
-               else {
-                      console.log('Success'+result);
-                      res.send('done');
-               }
-        });
-    }
+    User.update({_id: req.params.id}, {
+        firstName: req.body.firstName,
+        lastName: req.body.lastlame,
+        username: req.body.username,
+        email: req.body.email,
+        tel: req.body.tel,
+        password: req.body.password,
+        address: req.body.address
+    }, function(err, docs){
+            if(err) res.json(err)
+            else    res.status(204).end()
+    })
+}
 
 exports.login = (req, res) => {
-
     if (!req.user) {
         res.redirect('/');
     }
