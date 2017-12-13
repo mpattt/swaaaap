@@ -32,7 +32,8 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-        User.findByIdAndUpdate(req.body.username,{$set:req.body}, function(err, result) {
+    console
+        User.findByIdAndUpdate(req.params.user_id,{$set:req.body}, function(err, result) {
                if (err) {
                       console.log('Failure');
                       return next(err);
