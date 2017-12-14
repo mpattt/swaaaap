@@ -15,7 +15,7 @@ exports.getCategories = (req, res, next) => {
 }
 exports.create = (req, res, next) => {
 
-    var user = new User(req.body);
+    var user = new Category(req.body);
     user.save((err) => {
            if (err) {
                   console.log('Failure');
