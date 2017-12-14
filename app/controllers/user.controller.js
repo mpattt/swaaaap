@@ -44,7 +44,7 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-    User.update({_id: req.params.id}, {
+    User.findOneAndUpdate({_id: req.params.id}, {
         email: req.body.email,
         phone: req.body.tel,
         address: req.body.address
