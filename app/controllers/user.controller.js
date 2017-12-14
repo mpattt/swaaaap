@@ -49,13 +49,13 @@ exports.edit = (req, res, next) => {
       phone: req.body.phone,
       address: req.body.address
     }
-    User.findOneAndUpdate({_id: req.params.id}, function(err, docs){
+    User.findOneAndUpdate({_id: req.params.id}, function(err, user){
       if(err){
         console.log('Failure');
       } else {
       res.json(user);
       }
-    });  
+    });
 }
 
 exports.login = (req, res) => {
