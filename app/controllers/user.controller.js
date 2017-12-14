@@ -50,7 +50,7 @@ exports.edit = (req, res, next) => {
         address: req.body.address
     }, function(err, docs){
             if(err) res.json(err)
-            else    res.status(204).end()
+            else    res.status(200).end()
     })
 }
 
