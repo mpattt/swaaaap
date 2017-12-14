@@ -54,6 +54,7 @@ console.log('Failure');
       res.json(user);
     })
 }
+}
 
 exports.login = (req, res) => {
     if (!req.user) {
