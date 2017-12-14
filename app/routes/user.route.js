@@ -1,8 +1,13 @@
 const passport = require('passport');
-var user = require('../controllers/user.controller');
+const user = require('../controllers/user.controller');
 
 module.exports = (app) => {
-    var path = '/api/user';
+    const path = '/api/user';
+    app
+
+
+
+
 
     app.get(path + '/getuser', user.getUsers);
     app.post(path + '/signup', user.create);

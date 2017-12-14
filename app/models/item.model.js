@@ -2,25 +2,39 @@ const  mongoose  = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema = new Schema({
-      name: {
-            type: String,
-            required: true,
-            trim: true
+      itemimage: {
+        type: String,
+        required: true,
+        trim: true
+      },
+      itemname: {
+        type: String,
+        required: true,
+        trim: true
       },
       description: {
-            type: String
+        type: String
       },
       lookfor:  String,
-      send: String,
+      transfer: String,
       category: String,
-      postby: {
-            type: String,
-            trim: true
+      owner: {
+        type: String,
+        trim: true
       },
-      create: {
-            type: Date,
-            default: Date.now
-      }
+      status:{
+        type: String,
+        default: 'wait'
+      },
+      created: {
+        type: Date,
+        default: Date.now
+      },
+      offer:[{
+        offerimage: String,
+        offerusername: String,
+        offerdescription: String
+      }]
 });
 
 mongoose.model('Item', ItemSchema);
