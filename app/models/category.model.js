@@ -5,7 +5,7 @@ var CategorySchema = new Schema({
     categoryname: {
       type: String,
       unique: true,
-      required: true,
+      //required: true,
       trim: true
     },
     value: String,
