@@ -44,7 +44,7 @@ exports.getOne = (req, res, next) => {
 }
 
 exports.reply = (req, res, next) => {
-var data = [{
+var data = offer[{
   offerusername: req.body.reply,
   offerimg: req.body.img,
   offeritemname: req.body.name,

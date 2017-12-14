@@ -44,18 +44,15 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-    var user = {
-      email: req.body.email,
-      phone: req.body.phone,
-      address: req.body.address
-    }
-    User.findOneAndUpdate({_id: req.params.id}, function(err, user){
-      if(err){
-        console.log('Failure');
-      } else {
+var user ={  email: req.body.email,
+  phone: req.body.phone,
+  address: req.body.address}
+    User.findOneAndUpdate({_id: req.params.id}, function(err, docs){
+if(err){
+console.log('Failure');
+}else{
       res.json(user);
-      }
-    });
+    })
 }
 
 exports.login = (req, res) => {
