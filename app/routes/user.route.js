@@ -3,8 +3,6 @@ const user = require('../controllers/user.controller');
 
 module.exports = (app) => {
     const path = '/api/user';
-    app
-
 
 
 
