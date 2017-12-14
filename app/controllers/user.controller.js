@@ -54,8 +54,8 @@ exports.edit = (req, res, next) => {
         console.log('Failure');
       } else {
       res.json(user);
-      });
-    }
+      }
+    });  
 }
 
 exports.login = (req, res) => {
