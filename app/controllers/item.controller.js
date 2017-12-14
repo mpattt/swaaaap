@@ -28,3 +28,17 @@ exports.create = (req, res, next) => {
         }
     });
 }
+
+exports.getOne = (req, res, next) => {
+        Item.findOne({ _id: req.params.id }, (err, data) => {
+            if (err) {
+                console.log('Failure: ' + err);
+                return next(err);
+            }
+            else {
+                console.log(data);
+                res.json(data);
+            }
+        });
+
+}
