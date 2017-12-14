@@ -27,7 +27,6 @@ exports.getOne = (req, res, next) => {
             }
         });
     }
-}
 
 exports.create = (req, res, next) => {
 
