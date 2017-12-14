@@ -52,7 +52,7 @@ if(err){
 console.log('Failure');
 }else{
       res.json(user);
-    })
+    });
 }
 }
 
