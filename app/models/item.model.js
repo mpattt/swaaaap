@@ -31,9 +31,14 @@ var ItemSchema = new Schema({
         default: Date.now
       },
       offer:[{
-
         offerusername: String,
-        offerdescription: String
+        offerimg: String,
+        offeritemname: String,
+        offerdescription: String,
+        replytime: {
+          type: Date,
+          default: Date.now
+        }
       }]
 });
 

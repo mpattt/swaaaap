@@ -42,3 +42,23 @@ exports.getOne = (req, res, next) => {
         });
 
 }
+
+exports.reply = (req, res, next) => {
+var data = [{
+  offerusername: req.body.reply,
+  offerimg: req.body.img,
+  offeritemname: req.body.name,
+  offerdescription: req.body.description,
+}]
+        Item.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
+            if (err) {
+                console.log('Failure: ' + err);
+                return next(err);
+            }
+            else {
+                console.log(data);
+                res.json(data);
+            }
+        });
+
+}
