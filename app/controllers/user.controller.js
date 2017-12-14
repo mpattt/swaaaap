@@ -14,7 +14,20 @@ exports.getUsers = (req, res, next) => {
        });
 }
 
+exports.getOne = (req, res, next) => {
 
+        Post.findOne({ _id: req.params.id }, (err, data) => {
+            if (err) {
+                console.log('Failure: ' + err);
+                return next(err);
+            }
+            else {
+                console.log(data);
+                res.json(data);
+            }
+        });
+    }
+}
 
 exports.create = (req, res, next) => {
 
@@ -33,12 +46,8 @@ exports.create = (req, res, next) => {
 
 exports.edit = (req, res, next) => {
     User.update({_id: req.params.id}, {
-        firstName: req.body.firstName,
-        lastName: req.body.lastlame,
-        username: req.body.username,
         email: req.body.email,
-        tel: req.body.tel,
-        password: req.body.password,
+        phone: req.body.tel,
         address: req.body.address
     }, function(err, docs){
             if(err) res.json(err)

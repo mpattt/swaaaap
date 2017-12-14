@@ -31,7 +31,7 @@ var ItemSchema = new Schema({
         default: Date.now
       },
       offer:[{
-        offerimage: String,
+
         offerusername: String,
         offerdescription: String
       }]
