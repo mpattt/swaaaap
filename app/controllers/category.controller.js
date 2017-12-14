@@ -1,4 +1,4 @@
-var User = require('mongoose').model('Category');
+var Category = require('mongoose').model('Category');
 var path = require("path");
 
 exports.getCategories = (req, res, next) => {
