@@ -53,6 +53,6 @@ module.exports = function () {
     require('../app/routes/post.route')(app);
     require('../app/routes/item.route')(app);
     require('../app/routes/upload.route')(app);
-
+    require('../app/routes/category.route')(app);
     return app;
 }
