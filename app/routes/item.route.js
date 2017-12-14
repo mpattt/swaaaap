@@ -6,5 +6,5 @@ module.exports = (app) => {
       app.get(path + '/all', item.getItems);
       app.post(path + '/create', item.create);
       app.get(pathcategory, category.getCategories);
-      app.get(pathcategory+ '/create', category.create);
+      app.post(pathcategory+ '/create', category.create);
 }
