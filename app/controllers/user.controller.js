@@ -44,13 +44,14 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-    User.findOneAndUpdate({_id: req.params.id}, {
-        email: req.body.email,
-        phone: req.body.phone,
-        address: req.body.address
-    }, function(err, docs){
-            if(err) res.json(err)
-            else    res.status(200).end()
+var user ={  email: req.body.email,
+  phone: req.body.phone,
+  address: req.body.address}
+    User.findOneAndUpdate({_id: req.params.id}, function(err, docs){
+if(err){
+console.log('Failure');
+}else{
+      res.json(user);
     })
 }
 
