@@ -8,7 +8,7 @@ module.exports = (app) => {
     app.get(path + '/id/:id', user.getOne);
     app.post(path + '/signup', user.create);
     app.put(path + '/editprofile/:id', user.edit);
-    app.put(path + '/editstatus/:id&:status', user.editstatus);
+    app.put(path + '/editstatus/:id/:status', user.editstatus);
 
     app.route('/login')
         .get(user.login)
