@@ -35,7 +35,7 @@ var ItemSchema = new Schema({
       offer:[{
         offerusername: String,
         offerimg:String ,
-        offeritemname: String,
+        offeritemname: {type:String,  unique: true},
         offerdescription: String,
       }]
 });
