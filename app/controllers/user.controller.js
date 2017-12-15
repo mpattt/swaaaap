@@ -44,18 +44,16 @@ exports.create = (req, res, next) => {
 }
 
 exports.edit = (req, res, next) => {
-var user ={  email: req.body.email,
+User.findOneAndUpdate({ _id: req.params.id },{email: req.body.email,
   phone: req.body.phone,
-  address: req.body.address
-}
-User.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
+  address: req.body.address}, (err, data) => {
     if (err) {
         console.log('Failure: ' + err);
         return next(err);
     }
     else {
         console.log(data);
-        res.json(user);
+        res.json(data);
     }
 });
 }
