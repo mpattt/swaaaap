@@ -60,7 +60,7 @@ exports.edit = (req, res, next) => {
   var user ={  email: req.body.email,
     phone: req.body.phone,
     address: req.body.address
-  };
+  };console.log(data);
         User.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
             if (err) {
                 console.log('Failure: ' + err);

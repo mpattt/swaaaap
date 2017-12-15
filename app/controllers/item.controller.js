@@ -43,6 +43,9 @@ exports.getOne = (req, res, next) => {
 
 }
 
+
+
+
 exports.reply = (req, res, next) => {
 var data = offer[{
   offerusername: req.body.reply,
