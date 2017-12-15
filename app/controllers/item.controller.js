@@ -43,7 +43,7 @@ exports.getOne = (req, res, next) => {
 
 }
 exports.editstatus = (req, res, next) => {
-    Item.findByIdAndUpdate({ _id: req.params.id },{status: "swapped",swapper: req.params.username}, (err, data) => {
+    Item.findByIdAndUpdate({ _id: req.params.id },{status: "swapped",swapper: req.params.username,swappeditem:req.params.itemname}, (err, data) => {
     if (err) {
         console.log('Failure: ' + err);
         return next(err);
