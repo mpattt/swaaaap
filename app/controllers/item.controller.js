@@ -47,12 +47,11 @@ exports.getOne = (req, res, next) => {
 
 
 exports.reply = (req, res, next) => {
-        Item.findOneAndUpdate({ _id: req.params.id },offer:[{
-          offerusername: req.body.reply,
+        Item.findOneAndUpdate({ _id: req.params.id },{ $set: { "offer.$" :   offerusername: req.body.reply,
           offerimg: req.body.img,
           offeritemname: req.body.name,
-          offerdescription: req.body.description,
-        }], (err, data) => {
+          offerdescription: req.body.description } }
+, (err, data) => {
             if (err) {
                 console.log('Failure: ' + err);
                 return next(err);
