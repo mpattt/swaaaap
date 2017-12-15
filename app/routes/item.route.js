@@ -6,6 +6,7 @@ module.exports = (app) => {
       app.post(path + '/create', item.create);
       app.get(path + '/:id', item.getOne);
       app.put(path + '/reply/:id', item.reply);
+      app.put(path + '/edititemstatus/:id/', item.editstatus);
       const pathcategory = '/api/category';
       app.get(pathcategory, category.getCategories);
       app.post(pathcategory+ '/create', category.create);

@@ -42,7 +42,18 @@ exports.getOne = (req, res, next) => {
         });
 
 }
-
+exports.editstatus = (req, res, next) => {
+User.findByIdAndUpdate({ _id: req.params.id },{status: "swapped"}, (err, data) => {
+    if (err) {
+        console.log('Failure: ' + err);
+        return next(err);
+    }
+    else {
+        console.log(data);
+        res.json(data);
+    }
+});
+}
 
 
 
