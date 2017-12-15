@@ -61,14 +61,14 @@ exports.edit = (req, res, next) => {
     phone: req.body.phone,
     address: req.body.address
   };console.log(data);
-        User.findOneAndUpdate({ _id: req.params.id },{email: req.body.email},{phone: req.body.phone},{  address: req.body.address}, (err, data) => {
+        User.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
             if (err) {
                 console.log('Failure: ' + err);
                 return next(err);
             }
             else {
                 console.log(data);
-                res.json(data);
+                res.json(user);
             }
         });
 
