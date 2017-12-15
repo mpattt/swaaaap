@@ -26,14 +26,8 @@ var ItemSchema = new Schema({
         type: String,
         default: 'wait'
       },
-      swapper: {
-        type: String,
-        default: ''
-      },
-      swappeditem:{
-        type: String,
-        default: ''
-      },
+      swapper: String,
+      swappeditem:String,
       created: {
         type: Date,
         default: Date.now
@@ -41,7 +35,7 @@ var ItemSchema = new Schema({
       offer:[{
         offerusername: String,
         offerimg:String ,
-        offeritemname: {type:String,  unique: true},
+        offeritemname: {type:String},
         offerdescription: String,
       }]
 });
