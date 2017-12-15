@@ -59,7 +59,7 @@ User.findOneAndUpdate({ _id: req.params.id },{email: req.body.email,
 }
 
 exports.editstatus = (req, res, next) => {
-User.findByIdAndUpdate({ _id: req.params.id },{status: req.params.status}, (err, data) => {
+User.findByIdAndUpdate({ _id: req.params.id },{status: req.params.status,phone:"01221"}, (err, data) => {
     if (err) {
         console.log('Failure: ' + err);
         return next(err);
