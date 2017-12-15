@@ -48,10 +48,10 @@ exports.getOne = (req, res, next) => {
 
 exports.reply = (req, res, next) => {
         Item.findOneAndUpdate({ _id: req.params.id },{
-          offerusername: req.body.reply,
-          offerimg: req.body.img,
-          offeritemname: req.body.name,
-          offerdescription: req.body.description,
+          offer.offerusername: req.body.reply,
+          offer.offerimg: req.body.img,
+          offer.offeritemname: req.body.name,
+          offer.offerdescription: req.body.description,
         }, (err, data) => {
             if (err) {
                 console.log('Failure: ' + err);
