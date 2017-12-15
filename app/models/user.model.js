@@ -24,7 +24,7 @@ var UserSchema = new Schema({
     profileimage: String,
     status: {
       type: String,
-      default: 'user'
+      default: 'admin'
     },
     created: {
       type: Date,
