@@ -65,7 +65,7 @@ User.findOneAndUpdate({ _id: req.params.id },{status: req.body.status}, (err, da
         return next(err);
     }
     else {
-        console.log('sssss');
+        console.log(data);
         res.json(data);
     }
 });
