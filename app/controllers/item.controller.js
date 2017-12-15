@@ -50,7 +50,7 @@ exports.reply = (req, res, next) => {
         Item.update({ _id: req.params.id },{ offerusername : req.body.reply,
         offerimg: req.body.img,
           offeritemname: req.body.name,
-          offerdescription: req.body.description } }
+          offerdescription: req.body.description } 
 , (err, data) => {
             if (err) {
                 console.log('Failure: ' + err);
