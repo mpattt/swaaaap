@@ -32,12 +32,12 @@ var ItemSchema = new Schema({
         type: Date,
         default: Date.now
       },
-      offer:[{
+      offer:{
         offerusername: String,
         offerimg:String ,
         offeritemname: String,
         offerdescription: String,
-      }]
+      }
 });
 
 mongoose.model('Item', ItemSchema);
