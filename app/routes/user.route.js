@@ -10,7 +10,6 @@ module.exports = (app) => {
     app.put(path + '/editprofile/:id', user.edit);
     app.put(path + '/editstatus/:id', user.editstatus);
 
-editstatus
     app.route('/login')
         .get(user.login)
         .post(passport.authenticate('local', {
