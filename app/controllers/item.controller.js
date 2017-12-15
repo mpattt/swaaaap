@@ -47,7 +47,7 @@ exports.getOne = (req, res, next) => {
 
 
 exports.reply = (req, res, next) => {
-        Item.update({
+        Item.findOneAndUpdate({
           _id: req.params.id },{ offer: [{offerusername : req.body.reply,
             offerimg: req.body.img,
           offeritemname: req.body.name,
