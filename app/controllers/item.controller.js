@@ -43,15 +43,6 @@ exports.getOne = (req, res, next) => {
 
 }
 
-exports.deleteCategory = (req, res, next) => {
-    Item.findByIdAndRemove({_id: req.params.id},(err,data) => {
-                if(err){
-                    return next(err);
-                }else {
-                    res.json(data);
-                }
-        });
-}
 
 
 exports.editstatus = (req, res, next) => {
