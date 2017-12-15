@@ -42,6 +42,18 @@ exports.getOne = (req, res, next) => {
         });
 
 }
+
+exports.deleteCategory = (req, res, next) => {
+    Item.findByIdAndRemove({_id: req.params.id},req.body,(err,post) => {
+                if(err){
+                    return next(err);
+                }else {
+                    res.json(post);
+                }
+        });
+}
+
+
 exports.editstatus = (req, res, next) => {
     Item.findByIdAndUpdate({ _id: req.params.id },{status: "swapped",swapper: req.params.username,swappeditem:req.params.itemname}, (err, data) => {
     if (err) {
@@ -74,15 +86,4 @@ exports.reply = (req, res, next) => {
             }
         });
 
-}
-
-
-exports.deleteCategory = (req, res, next) => {
-    Post.findByIdAndRemove({_id: req.params.id},req.body,(err,post) => {
-                if(err){
-                    return next(err);
-                }else {
-                    res.json(post);
-                }
-        });
 }
