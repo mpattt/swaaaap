@@ -35,10 +35,6 @@ var ItemSchema = new Schema({
         offerimg: String,
         offeritemname: String,
         offerdescription: String,
-        replytime: {
-          type: Date,
-          default: Date.now
-        }
       }
 });
 
