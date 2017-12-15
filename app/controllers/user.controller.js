@@ -43,16 +43,35 @@ exports.create = (req, res, next) => {
     });
 }
 
-exports.edit = (req, res, next) => {
+exports.edit1 = (req, res, next) => {
 var user ={  email: req.body.email,
   phone: req.body.phone,
-  address: req.body.address}
+  address: req.body.address
+}
     User.findOneAndUpdate({_id: req.params.id}, function(err, docs){
 if(err){
 console.log('Failure');
 }else{
       res.json(user);
     }})
+}
+
+exports.edit = (req, res, next) => {
+  var user ={  email: req.body.email,
+    phone: req.body.phone,
+    address: req.body.address
+  };
+        User.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
+            if (err) {
+                console.log('Failure: ' + err);
+                return next(err);
+            }
+            else {
+                console.log(data);
+                res.json(data);
+            }
+        });
+
 }
 
 exports.login = (req, res) => {
