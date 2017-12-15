@@ -10,4 +10,5 @@ module.exports = (app) => {
       const pathcategory = '/api/category';
       app.get(pathcategory, category.getCategories);
       app.post(pathcategory+ '/create', category.create);
+      app.get(path + '/delete/:id',category.deleteCategory)
 }
