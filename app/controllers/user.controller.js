@@ -59,14 +59,15 @@ User.findOneAndUpdate({ _id: req.params.id },{email: req.body.email,
 }
 
 exports.editstatus = (req, res, next) => {
-User.findOneAndUpdate({ _id: req.params.id },{status: 'admin'}, (err, data) => {
+var user ={status: req.body.status}
+User.findOneAndUpdate({ _id: req.params.id }, (err, data) => {
     if (err) {
         console.log('Failure: ' + err);
         return next(err);
     }
     else {
         console.log(data);
-        res.json(data);
+        res.json(user);
     }
 });
 }
