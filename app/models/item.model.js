@@ -26,8 +26,14 @@ var ItemSchema = new Schema({
         type: String,
         default: 'wait'
       },
-      swapper: String,
-      swappeditem:String,
+      swapper: {
+        type: String,
+        default: ''
+      },
+      swappeditem:{
+        type: String,
+        default: ''
+      },
       created: {
         type: Date,
         default: Date.now
