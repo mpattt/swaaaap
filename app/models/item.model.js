@@ -30,7 +30,7 @@ var ItemSchema = new Schema({
         type: Date,
         default: Date.now
       },
-      offer:[{
+      offer:{
         offerusername: String,
         offerimg: String,
         offeritemname: String,
@@ -39,7 +39,7 @@ var ItemSchema = new Schema({
           type: Date,
           default: Date.now
         }
-      }]
+      }
 });
 
 mongoose.model('Item', ItemSchema);
