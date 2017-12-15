@@ -25,7 +25,7 @@ var ItemSchema = new Schema({
       status:{
         type: String,
         default: 'wait'
-      },
+      },swapper: String,
       created: {
         type: Date,
         default: Date.now
