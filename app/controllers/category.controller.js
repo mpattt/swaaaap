@@ -27,3 +27,13 @@ exports.create = (req, res, next) => {
            }
     });
 }
+
+exports.deleteCategory = (req, res, next) => {
+    Post.findByIdAndRemove({_id: req.params.id},req.body,(err,post) => {
+                if(err){
+                    return next(err);
+                }else {
+                    res.json(post);
+                }
+        });
+}
