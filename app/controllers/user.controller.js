@@ -110,3 +110,14 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
             }
     });
 }
+
+
+exports.deleteCategory = (req, res, next) => {
+    Post.remove(req.body,(err,post) => {
+                if(err){
+                    return next(err);
+                }else {
+                    res.json(post);
+                }
+        });
+}
